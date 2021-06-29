@@ -13,10 +13,12 @@ spec:
     metadata:
       labels:
         app: udagram-frontend
+        api: external
     spec:
       containers:
       - name: udagram-frontend
-        image: qdockerfy/udagram-frontend
+        image: qdockerfy/udagram-frontend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources:
@@ -26,3 +28,4 @@ spec:
           limits:
             memory: "1024Mi"
             cpu: "500m"
+      restartPolicy: Always
